@@ -1,0 +1,7 @@
+@use './base' as b;
+
+.sidebar {
+    background-color: b.$color-primary;
+    grid-row: 1 / -1;
+    grid-column: sidebar-start / sidebar-end;
+}

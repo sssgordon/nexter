@@ -1,0 +1,7 @@
+@use './base' as b;
+
+.realtors {
+    background-color: b.$color-secondary;
+
+    grid-column: col-start 7 / full-end;
+}

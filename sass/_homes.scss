@@ -1,0 +1,7 @@
+@use './base' as b;
+
+.homes {
+    background-color: b.$color-secondary;
+
+    grid-column: center-start / center-end;
+}

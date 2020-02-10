@@ -1,0 +1,7 @@
+@use './base' as b;
+
+.footer {
+    background-color: b.$color-secondary;
+
+    grid-column: full-start / full-end;
+}
