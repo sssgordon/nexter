@@ -3,13 +3,56 @@
 .story {
     &__pictures {
         background-color: b.$color-primary;
-
         grid-column: full-start / col-end 4;
+        background-image: linear-gradient(
+                rgba(b.$color-primary, 0.5),
+                rgba(b.$color-primary, 0.5)
+            ),
+            // when the two values are the same it is just an overlay
+                url(../img/back.jpg);
+
+        display: grid;
+        grid-template-columns: repeat(
+            6,
+            1fr
+        ); // we want 6 columns, the img occupies 4
+        align-items: center;
+    }
+
+    &__img--1 {
+        width: 100%;
+        grid-row: 2 / 6;
+        grid-column: 2 / 6;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__img--2 {
+        width: 115%;
+        grid-row: 4 / 6;
+        grid-column: 4 / 7;
+        z-index: 20;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
     }
 
     &__content {
         background-color: b.$color-grey-light-1;
-
         grid-column: col-start 5 / full-end;
+
+        padding: 6rem 8vw;
+
+        // display: flex; // great for 1-d layout
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: flex-start;
+
+        display: grid;
+        align-content: center;
+        justify-items: start;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        font-style: italic;
+        margin-bottom: 4rem;
     }
 }
