@@ -6,6 +6,32 @@
     margin: 15rem 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(25rem, 1fr)
+    ); // responsive: auto-fit the number of tracks according to a min-width of 250px and a max-width of 1fr
     grid-gap: 6rem;
+    align-items: start; // this prevents the children grid items to STRETCH
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: b.$color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+
+        grid-row: 1 / span 2; // -1 only works on explicit grid (defined rows)
+
+        transform: translateY(-1rem); // manually move up
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
 }
