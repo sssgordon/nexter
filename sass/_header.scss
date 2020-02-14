@@ -15,10 +15,18 @@
     padding-top: 4rem;
 
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr; // we want the spaces; determine the height top to bottom one at a time
-    grid-template-columns: max-content;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; // we want the row spaces; determine the height top to bottom one at a time; responsive
+    grid-template-columns: minmax(min-content, max-content); // responsive
     grid-row-gap: 1.5rem;
     justify-content: center;
+
+    @media only screen and (max-width: b.$bp-medium) {
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: b.$bp-small) {
+        padding: 5rem;
+    }
 
     &__logo {
         height: 3rem;
@@ -53,9 +61,11 @@
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 3rem;
         justify-items: center;
+        align-items: center;
 
         img {
-            height: 2.5rem;
+            max-height: 2.5rem; // the height can be less than 2.5rem; responsive
+            max-width: 100%; // the width can be less than 2.5rem; responsive
             filter: brightness(70%);
         }
     }
